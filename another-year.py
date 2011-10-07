@@ -152,9 +152,12 @@ def run(options):
 
 if __name__=="__main__":  
   parser = OptionParser()
-  parser.add_option("--consumer_key", dest="key", type="string")
-  parser.add_option("--consumer_secret", dest="secret", type="string")
-  parser.add_option("--year", dest="year", type="int")
+  parser.add_option("--consumer_key", dest="key", type="string",
+                    help="Rdio consumer key")
+  parser.add_option("--consumer_secret", dest="secret", type="string",
+                    help="Rdio consumer secret")
+  parser.add_option("--year", dest="year", type="int",
+                    help="The year to generate a playlist for. Defaults to the current year")
   (options, args) = parser.parse_args()
   run(options)
 
